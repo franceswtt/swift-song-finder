@@ -10,7 +10,7 @@ class ItunesService {
   static const String limit = '200';
   static const String media = 'music';
 
-  Future<GetItunesSongListResponse> fetchSongs() async {
+  Future<GetItunesSongListResponse?> fetchSongs() async {
     final response =
         await _connector.get('$endpoint?term=$term&limit=$limit&media=$media');
 

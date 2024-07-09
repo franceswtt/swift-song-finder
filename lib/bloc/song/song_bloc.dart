@@ -25,7 +25,7 @@ class SongBloc extends Bloc<SongEvent, SongState> {
     emit(SongLoading());
     try {
       final response = await itunesService.fetchSongs();
-      _songs = response.results ?? const [];
+      _songs = response?.results ?? const [];
       _filteredSongs = List.from(_songs);
       _applySorting();
       emit(SongLoaded(_filteredSongs));

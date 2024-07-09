@@ -13,7 +13,9 @@ class FetchSongs extends SongEvent {}
 class SearchSongs extends SongEvent {
   final String query;
 
-  const SearchSongs(this.query);
+  const SearchSongs({
+    required this.query,
+  });
 
   @override
   List<Object> get props => [query];
@@ -22,7 +24,9 @@ class SearchSongs extends SongEvent {
 class SortSongs extends SongEvent {
   final Sorting sorting;
 
-  const SortSongs(this.sorting);
+  const SortSongs({
+    required this.sorting,
+  });
 
   @override
   List<Object> get props => [sorting];

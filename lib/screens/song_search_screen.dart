@@ -69,7 +69,7 @@ class SongSearchScreen extends HookWidget {
         SearchBox(
           labelText: 'Search by Song or Album',
           onChanged: (value) {
-            context.read<SongBloc>().add(SearchSongs(value));
+            context.read<SongBloc>().add(SearchSongs(query: value));
           },
         ),
         Row(
@@ -80,7 +80,7 @@ class SongSearchScreen extends HookWidget {
                 selectedItem: sortingState.value,
                 onChanged: (value) {
                   sortingState.value = value;
-                  context.read<SongBloc>().add(SortSongs(value));
+                  context.read<SongBloc>().add(SortSongs(sorting: value));
                 },
               ),
           ],
